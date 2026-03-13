@@ -10,7 +10,7 @@ const Login = () => {
     username: '',
     password: '',
     name: '',
-    role: 'user'
+    role: 'USER'
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -52,7 +52,8 @@ const Login = () => {
           username: '',
           password: '',
           name: '',
-          role: 'user'
+          // role: ''
+          role: 'USER'
         });
       } else {
         setError(result.error);
@@ -76,7 +77,7 @@ const Login = () => {
         </div>
 
         <div className="card p-8">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit} action='POST'>
             {!isLogin && (
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
@@ -152,8 +153,8 @@ const Login = () => {
                   onChange={handleInputChange}
                   className="input-field"
                 >
-                  <option value="user">User</option>
-                  <option value="admin">Admin</option>
+                  <option value="USER">User</option>
+                  <option value="ADMIN">Admin</option>
                 </select>
               </div>
             )}

@@ -28,7 +28,7 @@ const Dashboard = () => {
 
   const recentItems = items.slice(0, 5);
   const lowStockItems = items.filter(item => item.quantity <= 5 && item.quantity > 0);
-  const isAdmin = currentUser?.role === 'admin';
+  const isAdmin = currentUser?.role === 'ADMIN';
 
   const filteredCategories = selectedCategory === 'all' 
     ? categoryStats 
